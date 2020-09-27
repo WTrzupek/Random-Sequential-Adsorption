@@ -160,7 +160,7 @@ e_sat.insert(0, "0 - 100")
 """ Pole do wpisania wielskosci próby """
 
 e_size = Entry(root, width = 15)
-e_size.insert(0, "0.05 - 0.1")
+e_size.insert(0, "0.01 - 0.1")
 
 """ Przyciski """
 button_naive = Button(root, text="Algorytm naiwny", padx = 20, pady = 12, command = lambda: naiveF(e_sat.get(), e_size.get(), root))
