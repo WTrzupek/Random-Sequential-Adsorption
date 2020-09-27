@@ -207,5 +207,5 @@ def call():
     root.mainloop()
     
     
-call()
+#call()
 
