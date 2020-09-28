@@ -61,7 +61,7 @@ def search_s1(saturation, size, startTime):
     
     circles = [plt.Circle((np.random.rand(),np.random.rand()), size)]    
     
-    while (N <= 1000 and com_sat <= saturation):
+    while (N <= 500 and com_sat <= saturation):
         
         N+=1
         nAttempts += 1
@@ -136,7 +136,7 @@ def search_s2(size, pixels, circles, com_sat, saturation, nAttemptsList, ntimeLi
     nAttempts = 0
     
     
-    while(Nn <= 1000 and com_sat < saturation):
+    while(Nn <= 500 and com_sat < saturation):
         
         pixel = random.choice(list(pixels))
         p_size = pixel[2]
