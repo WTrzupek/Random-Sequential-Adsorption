@@ -119,6 +119,12 @@ def search_s2(size, pixels, circles, com_sat, saturation, nAttemptsList, ntimeLi
     Keyword arguments:
     pixels -- list of free pixels
     circles -- list of already added circles
+    com_sat -- actual saturation
+    size -- radius of single circle
+    saturation -- max saturation
+    ntimeList -- list of end-times
+    satList -- list of end saturations
+    startTime -- start time of algorithm
     
     """
     if len(pixels) == 0:
@@ -190,7 +196,6 @@ def sub(pixels, size):
         
     Keyword arguments:
     pixels -- list of old pixels
-    circles -- list of circles
     size -- radius of single circle
     
     """
