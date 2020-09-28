@@ -68,6 +68,7 @@ def details(flag):
         
         top = Toplevel(root)
         fig, ax = plt.subplots()
+        ax.grid()
         ax.plot(naive.ntimeList, naive.satList)
 
         ax.set(xlabel='Czas (s)', ylabel='Osiągnięta saturacja (%)')
@@ -101,45 +102,6 @@ def details(flag):
         canvas = FigureCanvasTkAgg(fig, top)
         canvas.get_tk_widget().grid()
         canvas.draw()
-        
-# =============================================================================
-# def test(flag, size):
-#     
-#     test = Toplevel(root)
-#     
-#     if flag == 0:
-#         """ Test for precise algorithm """
-#         
-#         if precise.test(naive.circles, float(size)) == 0:
-#             test_result = Label(test, text = "Symulacja zakończona sukcesem")
-#         
-#         else: 
-#             test_result = Label(test, text = "Symulacja zakończona niepowodzeniem")
-#     
-#     elif flag == 1:
-#         """ Test for precise algorithm """
-#     
-#         if precise.test(improved.circles, float(size)) == 0:
-#             test_result = Label(test, text = "Symulacja zakończona sukcesem")
-#         
-#         else: 
-#             test_result = Label(test, text = "Symulacja zakończona niepowodzeniem")
-#         
-#     elif flag == 2:
-#         """ Test for precise algorithm """
-#     
-#         if precise.test(precise.circles, float(size)) == 0:
-#             test_result = Label(test, text = "Symulacja zakończona sukcesem")
-#         
-#         else: 
-#             test_result = Label(test, text = "Symulacja zakończona niepowodzeniem")
-#     
-#     
-#     button_exit = Button(test, text="Ok", padx=25, pady=6, command=test.destroy)
-#     
-#     test_result.grid(row = 0, column = 0)
-#     button_exit.grid(row = 1, column = 0)
-# =============================================================================
 
 
 root = Tk()
@@ -152,17 +114,17 @@ elapsed_time = StringVar()
 common_saturation.set("0")
 elapsed_time.set("0")
 
-""" Pole do wpisania saturacji"""
+""" Saturation field """
     
 e_sat = Entry(root, width = 15)
 e_sat.insert(0, "0 - 100")
 
-""" Pole do wpisania wielskosci próby """
+""" Circle radius field """
 
 e_size = Entry(root, width = 15)
 e_size.insert(0, "0.01 - 0.1")
 
-""" Przyciski """
+""" Buttons """
 button_naive = Button(root, text="Algorytm naiwny", padx = 20, pady = 12, command = lambda: naiveF(e_sat.get(), e_size.get(), root))
 button_improved = Button(root, text="Algorytm ulepszony", padx=20, pady=12, command = lambda: improvedF(e_sat.get(), e_size.get(), root))
 button_precise = Button(root, text="Algorytm precyzyjny", padx=20, pady= 12, command = lambda: preciseF(e_sat.get(), e_size.get(), root))
@@ -181,7 +143,7 @@ time_label_t = Label(root, text = "Czas końcowy(s): ", anchor = "w")
 time_label = Label(root, textvariable = elapsed_time)
 
 
-""" Ustawienie obiektów w oknie """
+""" Setting objects in window """
 e_sat_label.grid(row = 0, column = 0, padx = 10, pady = 10)
 e_sat.grid(row = 0, column = 0, padx = 10, pady = 10, columnspan = 2)
 
