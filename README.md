@@ -9,7 +9,7 @@ of attention due to its many applications in this type of problem.
 
 Run the following to install:
 
-> pip -m install git+https://github.com/WTrzupek/RSA#egg=RSA
+> pip -m install git+https://github.com/WTrzupek/Random-Sequential-AdsorptionSA#egg=Random-Sequential-Adsorption
 
 ## Usage
 
